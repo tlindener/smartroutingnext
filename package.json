@@ -1,0 +1,33 @@
+{
+  "name": "smartroutingnext",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlindener/smartroutingnext.git"
+  },
+  "keywords": [
+    "opendata",
+    "db",
+    "smartrouting"
+  ],
+  "author": "Tobias Lindener",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tlindener/smartroutingnext/issues"
+  },
+  "homepage": "https://github.com/tlindener/smartroutingnext#readme",
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "geolib": "^2.0.21",
+    "googlemaps": "^1.6.0",
+    "morgan": "^1.7.0",
+    "request": "^2.72.0"
+  }
+}

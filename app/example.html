@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="row"/>
+  <div class="col-sm-4">
+    <h4> Route</h4>
+  <form novalidate>
+  <h6>Start location:</h6>
+    <input type="text" ng-model="locationStart">  <h6>
+  Destination</h6>
+    <input type="text" ng-model="locationStop">
+  <h6>
+  Preference</h6>
+  <select ng-model="routePreference" ng-options="x for x in prefs">
+</select>
+    <!-- <input type="text" ng-model="routePreference">  <br> -->
+      Calculate route from {{locationStart}} to {{locationStop}}   <br>  <button ng-click="submitRequest()">request</button>
+  </form>
+
+  </div>
+      <div class="col-sm-8">    <h1>{{headline}}</h1>
+          <h4>{{influenced}}</h4></div>
+        </div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+  <timeline class="col-sm-8">
+
+
+    <!-- can also hard-code to side="left" or side="right" -->
+    <timeline-event ng-repeat="event in events" side="{{side}}">
+      <!-- uses angular-scroll-animate to give it some pop -->
+      <timeline-badge class="{{event.badgeClass}} timeline-hidden"
+                      when-visible="animateElementIn" when-not-visible="animateElementOut">
+        <img style="z-index: -10;" class="img-thumbnail" ng-src="./{{event.badgeIconClass}}" ></i>
+      </timeline-badge>
+
+      <!-- uses angular-scroll-animate to give it some pop -->
+      <timeline-panel class="{{event.badgeClass}} timeline-hidden"
+                      when-visible="animateElementIn" when-not-visible="animateElementOut">
+        <timeline-heading>
+          <p ng-if="event.when">
+            <h4 class="text-muted"><i class="glyphicon glyphicon-time"></i>{{event.when}}</h4>
+          </p>
+          <p ng-if="event.title" ng-bind-html="event.title">
+          </p>
+        </timeline-heading>
+        <p ng-bind-html="event.contentHtml"></p>
+        <timeline-footer ng-if="event.footerContentHtml">
+          <span ng-bind-html="event.footerContentHtml"></span>
+        </timeline-footer>
+      </timeline-panel>
+    </timeline-event>
+  </timeline>
+</div>
+</div>
